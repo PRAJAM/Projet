@@ -7,6 +7,10 @@ st.title("Largeur de bande par service")
 # Charger les données depuis le CSV
 df = pd.read_csv('https://github.com/PRAJAM/Projet/raw/jules/Export_TER_juin2023_FIX_SafwanChendeb.csv', sep=';')
 
+sample_fraction = 0.1  # Vous pouvez ajuster cette valeur
+df = df.sample(frac=sample_fraction, random_state=1)
+
+
 # Filtrer les lignes avec des valeurs manquantes pour ASS_LGBD_KHZ
 df2 = df.dropna(subset=['ASS_LGBD_KHZ'])
 df2 = df2[df2["ASS_LGBD_KHZ"] > 1000]
