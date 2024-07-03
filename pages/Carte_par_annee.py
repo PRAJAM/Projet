@@ -8,7 +8,7 @@ from streamlit_folium import st_folium
 def load_data():
     df = pd.read_csv('https://github.com/PRAJAM/Projet/raw/jules/Export_TER_juin2023_FIX_SafwanChendeb.csv', sep=';')
 
-    sample_fraction = 0.1  # Vous pouvez ajuster cette valeur
+    sample_fraction = 0.1
     df = df.sample(frac=sample_fraction, random_state=1)
 
     df = df.dropna(subset=['ASS_LGBD_KHZ'])
